@@ -172,8 +172,97 @@ const user = {
 // console.log(Utils.greet("Мария"));
 // console.log("Умножение:", Utils.multiply(3, 9));
 
-import { square, cube, E } from "./math.js";
+// import { square, cube, E } from "./math.js";
 
-console.log("Квадрат числа 5:", square(5));
-console.log("Куб числа 3:", cube(3));
-console.log("Число E:", E);
+// console.log("Квадрат числа 5:", square(5));
+// console.log("Куб числа 3:", cube(3));
+// console.log("Число E:", E);
+
+// console.log("Промисы");
+
+// const simplePromise = new Promise((resolve, reject) => {
+//   const success = true;
+//   if (success) {
+//     resolve("Операция выполнена успешно!");
+//   } else {
+//     reject("Произошла ошибка!");
+//   }
+// });
+
+// simplePromise
+//   .then((result) => console.log("Результат:", result))
+//   .catch((error) => console.log("Ошибка:", error));
+
+// function delay(ms) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(`Прошло ${ms} миллисекунд`);
+//     }, ms);
+//   });
+// }
+
+// delay(1000)
+//   .then((message) => console.log(message));
+
+// function fetchUserData(userId) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (userId > 0) {
+//         resolve({
+//           id: userId,
+//           name: "Иван Иванов",
+//           email: "ivan@example.com",
+//         });
+//       } else {
+//         reject("Неверный ID пользователя");
+//       }
+//     }, 1500);
+//   });
+// }
+
+// fetchUserData(1)
+//   .then((user) => console.log("Пользователь:", user))
+//   .catch((error) => console.log("Ошибка:", error));
+
+// function step1() {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve("Шаг 1 завершено"), 500);
+//   });
+// }
+
+// function step2(previousResult) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve(`${previousResult} -> Шаг 2 завершено`), 500);
+//   });
+// }
+
+// function step3(previousResult) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve(`${previousResult} -> Шаг 3 завершено`), 500);
+//   });
+// }
+
+// step1()
+//   .then((result1) => step2(result1))
+//   .then((result2) => step3(result2))
+//   .then((finalResult) => console.log("Финальный результат:", finalResult))
+//   .catch((error) => console.log("Ошибка в цепочке:", error));
+
+
+function checkInventory(productName, inStock) {
+  return new Promise((resolve, reject) => {
+    if (inStock) {
+      resolve(`Товар "${productName}" есть в наличии`);
+    } else {
+      reject(`Ошибка: товара "${productName}" нет на складе`);
+    }
+  });
+}
+
+checkInventory("Хлеб", true)
+  .then((message) => console.log(message))
+  .catch((error) => console.log(error));
+
+checkInventory("Латяо", false)
+  .then((message) => console.log(message))
+  .catch((error) => console.log(error));
