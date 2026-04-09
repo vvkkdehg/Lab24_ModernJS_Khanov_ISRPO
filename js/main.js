@@ -129,30 +129,51 @@ const user = {
 // console.log("Второе число:", second);
 // console.log("Остальные числа:", rest);
 
-const numbers1 = [10, 20, 30];
-const numbers2 = [40, 50, 60];
+// const numbers1 = [10, 20, 30];
+// const numbers2 = [40, 50, 60];
 
-const combinedNumbers = [...numbers1, ...numbers2];
-console.log("Объединённый массив:", combinedNumbers);
+// const combinedNumbers = [...numbers1, ...numbers2];
+// console.log("Объединённый массив:", combinedNumbers);
 
-function findMax(...numbers) {
-    return Math.max(...numbers);
-}
+// function findMax(...numbers) {
+//     return Math.max(...numbers);
+// }
 
-console.log(findMax(5, 12, 8, 23, 17));
-console.log(findMax(45, 67, 23, 89, 12, 54));
+// console.log(findMax(5, 12, 8, 23, 17));
+// console.log(findMax(45, 67, 23, 89, 12, 54));
 
-const obj1 = {
-    name: "Женек",
-    surname: "Журавский",
-    born: 2007
-};
+// const obj1 = {
+//     name: "Женек",
+//     surname: "Журавский",
+//     born: 2007
+// };
 
-const obj2 = {
-    fav_color: "light blue",
-    fav_anime: "Сейлор Мун",
-    dream: "Станцевать в костюме Сейлор Сатурн перед преподавателями колледжа"
-};
+// const obj2 = {
+//     fav_color: "light blue",
+//     fav_anime: "Сейлор Мун",
+//     dream: "Станцевать в костюме Сейлор Сатурн перед преподавателями колледжа"
+// };
 
-const obied = { ...obj1, ...obj2 };
-console.log("Объединённый объект:", obied);
+// const obied = { ...obj1, ...obj2 };
+// console.log("Объединённый объект:", obied);
+
+
+// import { greet, add, PI} from "./utils.js";
+
+// console.log("Модули");
+// console.log(greet("Алексей"));
+// console.log("5 + 3 =", add(5, 3));
+// console.log("Значение PI:", PI);
+
+// import { multiply as умножить } from "./utils.js";
+// console.log("4 * 7 =", умножить(4, 7));
+
+// import * as Utils from "./utils.js";
+// console.log(Utils.greet("Мария"));
+// console.log("Умножение:", Utils.multiply(3, 9));
+
+import { square, cube, E } from "./math.js";
+
+console.log("Квадрат числа 5:", square(5));
+console.log("Куб числа 3:", cube(3));
+console.log("Число E:", E);
